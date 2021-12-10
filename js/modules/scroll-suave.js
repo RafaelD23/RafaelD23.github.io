@@ -6,16 +6,15 @@ export default class ScrollSuave {
     } else {
       this.options = options;
     }
+
+    this.scrollToSection = this.scrollToSection.bind(this);
   }
 
   scrollToSection(event) {
     event.preventDefault();
     const href = event.currentTarget.getAttribute("href");
     const section = document.querySelector(href);
-    section.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
+    section.scrollIntoView(this.options);
   }
 
   addLinkEvent() {
@@ -25,6 +24,9 @@ export default class ScrollSuave {
   }
 
   init() {
-    this.addLinkEvent();
+    if (this.linksInternos.length) {
+      this.addLinkEvent();
+    }
+    return this;
   }
 }
