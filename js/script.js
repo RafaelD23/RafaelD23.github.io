@@ -38,7 +38,6 @@ scrollAnima.init();
 const dropdownMenu = new DropdownMenu("[data-dropdown]");
 dropdownMenu.init();
 
-initDropdownMenu();
 initMenuMobile();
 initFuncionamento();
 
